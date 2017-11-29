@@ -76,8 +76,8 @@ int main() {
   std::vector<NonTrivialType> sorted_non_trivial_types = non_trivial_types;
   std::sort(sorted_non_trivial_types.begin(), sorted_non_trivial_types.end());
 
-  const auto fib_read_start = GetMonotonicTime();
   std::vector<NonTrivialType> queue_non_trivial_types(non_trivial_types.size());
+  const auto fib_read_start = GetMonotonicTime();
   for (size_t i = 0; !queue.empty(); ++i) {
     const int index = queue.pop();
     queue_non_trivial_types[i] = non_trivial_types[index];
@@ -96,10 +96,11 @@ int main() {
   std::cout << "STL read time delta: " << (stl_read_end - stl_read_start) << '\n';
 
   for (size_t i = 0; i < sorted_non_trivial_types.size(); ++i) {
+    const auto& stl_queue = stl_queue_non_trivial_types[i];
     const auto& queue = queue_non_trivial_types[i];
     const auto& sorted = sorted_non_trivial_types[i];
     if (queue.data != sorted.data) {
-      std::cerr << "Not equal: "  << queue.data << " vs "  << sorted.data << " \n";
+      std::cerr << "Not equal: "  << stl_queue.data << " vs " << queue.data << " vs "  << sorted.data << " \n";
     }
   }
 
