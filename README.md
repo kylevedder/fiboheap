@@ -10,7 +10,16 @@ This is a header-only implementation of:
 
 The heap and queues are targeted at projects that are relunctant to rely on Boost for a simple Fibonacci heap or queue.
 
-Compile test exe with
+Compile with:
 ```
-g++ -g -std=c++11 test_fiboheap.cc -o tf
+make
+```
+
+Performance on an `Intel Core i7-7820HQ CPU @ 3.9GHz`:
+```
+Fib push time delta: 0.804602
+STL push time delta: 0.150856
+Fib read time delta: 3.1695
+STL read time delta: 1.60995e-07
+
 ```
