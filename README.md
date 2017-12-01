@@ -17,9 +17,9 @@ make
 
 Performance on an `Intel Core i7-7820HQ CPU @ 3.9GHz`:
 ```
-Fib push time delta: 0.804602
-STL push time delta: 0.150856
-Fib read time delta: 3.1695
-STL read time delta: 1.60995e-07
+Fib push time delta: 1.01755
+STL push time delta: 0.20465
+Fib read time delta: 4.40368
+STL read time delta: 1.52481
 
 ```

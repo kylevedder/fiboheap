@@ -87,7 +87,7 @@ int main() {
 
   std::vector<NonTrivialType> stl_queue_non_trivial_types(non_trivial_types.size());
   const auto stl_read_start = GetMonotonicTime();
-  for (size_t i = 0; !queue.empty(); ++i) {
+  for (size_t i = 0; !stl_queue.empty(); ++i) {
     const int index = stl_queue.top().index;
     stl_queue.pop();
     stl_queue_non_trivial_types[i] = non_trivial_types[index];
